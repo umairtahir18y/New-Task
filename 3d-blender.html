@@ -1,0 +1,395 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Python Course - HC Academy of IT</title>
+    <!-- Link to Font Awesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="styles.css">
+    <style>
+       
+        /* Modern Header Styling */
+        .hero-section {
+            background-image: url('https://cdn.pickr.com.au/wp-content/uploads/2022/01/back-to-school-laptop-guide-kid-using-laptop-1024x679.jpg');
+            background-size: cover;
+            background-position: center;
+            height: 500px;
+            position: relative;
+            color: white;
+            text-align: center;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .overlay {
+            background-color: rgba(0, 0, 0, 0.7);
+            width: 100%;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+        }
+
+        .overlay h1 {
+            font-size: 48px;
+            margin-bottom: 20px;
+            font-weight: 700;
+            color: #fff;
+        }
+
+        .overlay p {
+            font-size: 20px;
+            color: #f0f0f0;
+            margin-bottom: 20px;
+        }
+
+        /* Button Style */
+        .cta-button {
+            background-color: #1a73e8;
+            color: white;
+            padding: 15px 30px;
+            border: 1px solid #1a73e8;
+            border-radius: 5px;
+            font-size: 18px;
+            border: none;
+            cursor: pointer;
+            text-decoration: none;
+        }
+
+        .cta-button:hover {
+            background-color: #fff;
+            color: #1a73e8;
+            border: 1px solid #1a73e8;
+        }
+
+        .course-info {
+            padding: 40px 20px;
+            max-width: 1100px;
+            margin: 40px auto;
+            background-color: #ffffff;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .course-info img {
+            width: 100%;
+            border-radius: 8px;
+            margin-bottom: 20px;
+        }
+
+        .course-info h2 {
+            font-size: 28px;
+            margin: 20px 0 10px;
+            color: #2c3e50;
+            border-bottom: 3px solid #3498db;
+            display: inline-block;
+            padding-bottom: 5px;
+        }
+
+        .course-info p {
+            margin-bottom: 20px;
+            line-height: 1.8;
+            font-size: 18px;
+        }
+
+        ul {
+            margin-left: 20px;
+            list-style: none;
+        }
+
+        ul li {
+            font-size: 18px;
+            margin-bottom: 10px;
+            position: relative;
+        }
+
+        ul li::before {
+            content: "\f00c";
+            font-family: 'Font Awesome 5 Free';
+            font-weight: 900;
+            color: #3498db;
+            position: absolute;
+            left: -25px;
+            top: 2px;
+        }
+
+        .batch-details {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            margin-top: 40px;
+            gap: 20px;
+        }
+
+        .batch-details .detail-item {
+            flex: 1 1 calc(33.333% - 20px);
+            background: #3498db;
+            color: white;
+            padding: 20px;
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .detail-item i {
+            font-size: 30px;
+            color: #f0d641;
+        }
+
+        .detail-item span {
+            font-size: 18px;
+        }
+
+        /* Certificate Section */
+        .certificate-section {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            align-items: center;
+            background-color: #fff;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            max-width: 1100px;
+            margin: 50px auto;
+            padding: 30px;
+        }
+
+        .certificate-content {
+            flex: 1;
+        }
+
+        .certificate-content h2 {
+            font-size: 2rem;
+            color: #000;
+            margin-bottom: 15px;
+        }
+
+        .certificate-content p {
+            font-size: 1.1rem;
+            color: #333;
+            margin-bottom: 10px;
+        }
+
+        .certificate-content a {
+            color: #1a73e8;
+            text-decoration: none;
+        }
+
+        .certificate-content a:hover {
+            text-decoration: underline;
+        }
+
+        .certificate-image {
+            flex: 1;
+            text-align: right;
+        }
+
+        .certificate-image img {
+            max-width: 300px;
+            border-radius: 10px;
+        }
+
+        /* Trainers Section */
+        .trainers-section {
+            background-color: #ecf0f1;
+            padding: 40px 20px;
+            margin-top: 40px;
+        }
+
+        .trainers-section h2 {
+            font-size: 28px;
+            color: #2c3e50;
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+        .trainers-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            gap: 20px;
+        }
+
+        .trainer-card {
+            background-color: #ffffff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            flex: 1 1 calc(33.333% - 20px);
+            text-align: center;
+        }
+
+        .trainer-card img {
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            object-fit: cover;
+            margin-bottom: 15px;
+        }
+
+        .trainer-card h3 {
+            font-size: 22px;
+            margin-bottom: 5px;
+            color: #2c3e50;
+        }
+
+        .trainer-card p {
+            font-size: 16px;
+            color: #7f8c8d;
+        }
+
+        /* Responsive adjustments */
+        @media(max-width: 768px) {
+            .hero-section {
+                height: 300px;
+            }
+
+            .overlay h1 {
+                font-size: 36px;
+            }
+
+            .overlay p {
+                font-size: 16px;
+            }
+
+            .course-info h2 {
+                font-size: 24px;
+            }
+
+            .course-info p {
+                font-size: 16px;
+            }
+
+            .batch-details {
+                flex-direction: column;
+            }
+
+            .batch-details .detail-item {
+                flex: 1 1 100%;
+            }
+
+            .certificate-section {
+                flex-direction: column;
+                align-items: center;
+                text-align: center;
+            }
+
+            .certificate-content, .certificate-image {
+                flex: 1 1 100%;
+            }
+
+            .certificate-image {
+                margin-top: 20px;
+            }
+
+            .trainers-container {
+                flex-direction: column;
+            }
+
+            .trainer-card {
+                flex: 1 1 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="hero-section">
+        <div class="overlay">
+            <h1>3D Blender</h1>
+            <p>Learn with HC Academy </p>
+        </div>
+    </div>
+
+    <div class="course-info">
+       
+        
+        <h2>Course Description</h2>
+        <p>Eu adipiscing nec erat amet at aliquam blandit gravida massa suscipit massa fames nibh dapibus tristique dolor a cursus maecenas praesent elit donec faucibus eget commodo ultricies amet molestie nunc sit sed enim magna et viverra purus blandit amet a cursus elementum ipsum sit accumsan blandit pretium vitae mollis sociis mauris nulla varius bibendum fames facilisis elit, donec et ultrices neque mauris, aenean morbi.</p>
+        
+        <h2>What You'll Learn</h2>
+        <ul>
+            <li>Have a fundamental understanding of the Python programming language.</li>
+            <li>Understand both Python 2 and Python 3.</li>
+            <li>Learn functional programming.</li>
+            <li>Object-Oriented Programming.</li>
+            <li>Learn best practices to write clean, performant, and bug-free code.</li>
+            <li>Setup a Membership site.</li>
+            <li>Learn how to monetize your skills from the course.</li>
+        </ul><br>
+
+        <a href="#" class="cta-button">Enroll Now</a><br><br>
+
+        <!-- Batch Details Section -->
+        <h2>Batch Details</h2>
+        <div class="batch-details">
+            <div class="detail-item">
+                <i class="fas fa-clock"></i>
+                <span>Batch Duration: 12 Weeks</span>
+            </div>
+            <div class="detail-item">
+                <i class="fas fa-video"></i>
+                <span>Videos Duration: 24 hours</span>
+            </div>
+            <div class="detail-item">
+                <i class="fas fa-calendar-alt"></i>
+                <span>Start Date: 10 Jul 2024</span>
+            </div>
+            <div class="detail-item">
+                <i class="fas fa-dollar-sign"></i>
+                <span>Fee: Free of Cost</span>
+            </div>
+            <div class="detail-item">
+                <i class="fas fa-users"></i>
+                <span>Who can Join: Everyone</span>
+            </div>
+            <div class="detail-item">
+                <i class="fas fa-user-graduate"></i>
+                <span>Enrolled Trainees: 16,210</span>
+            </div>
+            <div class="detail-item">
+                <i class="fas fa-globe"></i>
+                <span>Video Medium: Urdu & English</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- Certificate Section -->
+    <div class="certificate-section">
+        <div class="certificate-content">
+            <h2>Earn a career certificate</h2>
+            <p>Add this credential to your LinkedIn profile, resume, or CV.</p>
+            <p>Share it on social media and in your performance review.</p>
+        </div>
+        <div class="certificate-image">
+            <img src="certificate.jpg" alt="Certificate">
+        </div>
+    </div>
+
+    <!-- Trainers Section -->
+    <div class="trainers-section">
+        <h2>Meet Your Trainers</h2>
+        <div class="trainers-container">
+            <div class="trainer-card">
+                <img src="img2.jpg" alt="Trainer Image">
+                <h3>John Doe</h3>
+                <p>Lead Instructor, Expert in Python and Data Science</p>
+            </div>
+            <div class="trainer-card">
+                <img src="img3.jpg" alt="Trainer Image">
+                <h3>Jane Smith</h3>
+                <p>Instructor, Software Engineer & Full Stack Developer</p>
+            </div>
+            <div class="trainer-card">
+                <img src="img6.jpg" alt="Trainer Image">
+                <h3>Michael Brown</h3>
+                <p>Assistant Instructor, Python Automation Specialist</p>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
